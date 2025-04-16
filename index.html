@@ -37,7 +37,7 @@ td textarea {
       max-width: 900px;
       margin: auto;
       position: relative;
-      padding: 40px 40px 60px 40px;
+      padding: 5px 40px 20px 40px;
       border: 1px solid #ccc;
       border-radius: 8px;
     }
@@ -207,7 +207,7 @@ td textarea {
   </center></div>
 
   <!-- Client + Project Details Section -->
-  <div class="section details-section">
+<div class="section details-section">
     <div class="client-details">
       <h3>Client Details</h3>
       <p><strong>Name/Reference:</strong> <input style="width:250px; font-size:18px; background:transparent; padding-top:12px; border-color:transparent;" type="text" id="clientName"><input style="width:400px; font-size:18px; background:transparent; padding-top:12px; border-color:transparent;" type="text" id="customerName"></p>
@@ -472,18 +472,8 @@ exportBtn.addEventListener("click", async () => {
     const pageHeight = 295; // A4 height in mm
     const imgHeight = canvas.height * imgWidth / canvas.width;
     let heightLeft = imgHeight;
-    let position = 0;
 
-    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-    heightLeft -= pageHeight;
-
-    // Add new pages if content is too long
-    while (heightLeft >= 0) {
-      position = heightLeft - imgHeight;
-      pdf.addPage();
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-    }
+    pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
 
     // Save the PDF
     const invoiceNumber = document.getElementById('invoiceNumber').value || 'invoice';
