@@ -96,26 +96,23 @@ td textarea {
       background: url('https://cdn.shopify.com/s/files/1/0636/1035/5827/files/3.png') no-repeat center bottom;
       background-size: cover;
       height: 120px;
-      margin-top: 80px;
     }
 
     .section {
-      margin: 20px 0;
+      margin: 0px 0;
     }
 
     .section h3 {
-      margin-top: 50px;
-      margin-bottom: 10px;
+      margin-top: 15px;
+      margin-bottom: 5px;
       border-bottom: 1px solid #eee;
-      padding-bottom: 5px;
     }
     td input {
   width: 100%;
-  font-size: 16px;
+  font-size: 18px;
   background: transparent;
   border: none;
   resize: vertical;
-  padding: 6px;
   box-sizing: border-box;
   white-space: normal;
   word-wrap: break-word;
@@ -132,7 +129,7 @@ td textarea {
 
     th, td {
       border: 1px solid #ccc;
-      padding: 10px;
+      padding: 1px;
       text-align: center;
     }
 
@@ -146,7 +143,7 @@ td textarea {
     }
 
     .signature {
-      margin-top: 40px;
+      margin-top: 0px;
       text-align: left;
     }
 
@@ -154,7 +151,7 @@ td textarea {
     .details-section {
       display: flex;
       justify-content: space-between;
-      gap: 40px;
+      gap: 5px;
       flex-wrap: wrap;
     }
 
@@ -323,11 +320,11 @@ function createItemRow(description = "", unit = "", quantity = 1, price = 0) {
   const row = document.createElement("tr");
   row.classList.add("invoice-item");
   row.innerHTML = `
-    <td><textarea class="desc" style="width: 100%; background:transparent; border-color:transparent; resize: both;">${description}</textarea>
+    <td><textarea class="desc" style="font-size: 14px;width: 100%; background:transparent; border-color:transparent; resize: both;">${description}</textarea>
   </td>
-    <td><input value="${unit}" class="unit"></td>
-    <td><input type="number" value="${quantity}" class="qty"></td>
-    <td><input type="number" value="${price}" class="price"></td>
+    <td><input style="text-align: center;" value="${unit}" class="unit"></td>
+    <td><input style="text-align: center;" type="number" value="${quantity}" class="qty"></td>
+    <td><input style="text-align: center;" type="number" value="${price}" class="price"></td>
     <td class="total">0</td>
     <td class="no-export"><button class="delete-btn">❌</button></td>
   `;
